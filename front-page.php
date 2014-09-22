@@ -10,7 +10,7 @@ get_header(); ?>
 <?php dazzling_call_for_action(); ?>
 
 <div id="content" class="site-content container">
-	<div id="primary" class="content-area col-sm-12 col-md-12">
+	<div id="primary" class="content-area col-sm-12 col-md-8 pull-left">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 					<?php edit_post_link( __( 'Edit', 'dazzling' ), '<footer class="entry-meta"><i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span></footer>' ); ?>
 				</article><!-- #post-## -->
 
-				<?php get_sidebar( 'home' ); ?>
+				
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
@@ -41,7 +41,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+<?php get_sidebar(); ?>
 
 <?php
 	get_footer();
