@@ -578,7 +578,22 @@ li.recentcomments {
 
 /* =Navigation
 ----------------------------------------------- */
-
+#logo { 
+  background-color: #e0eff1;
+  position: absolute;
+  top: 10%;
+  z-index: 3;
+  padding: 10px;
+  border-radius: 10%;
+}
+.site-description{ 
+  display: inline-block;
+  width: 17em;
+  text-align: center;
+}
+.site-name{
+  display: block;
+}
 .site-main [class*="navigation"] a,
 .more-link {
   border: 1px solid #E8E8E8;
