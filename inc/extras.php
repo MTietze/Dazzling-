@@ -14,8 +14,8 @@
  * @return array
  */
 function dazzling_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+  $args['show_home'] = true;
+  return $args;
 }
 add_filter( 'wp_page_menu_args', 'dazzling_page_menu_args' );
 
@@ -27,12 +27,12 @@ add_filter( 'wp_page_menu_args', 'dazzling_page_menu_args' );
  * @return array
  */
 function dazzling_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+  // Adds a class of group-blog to blogs with more than 1 published author.
+  if ( is_multi_author() ) {
+    $classes[] = 'group-blog';
+  }
 
-	return $classes;
+  return $classes;
 }
 add_filter( 'body_class', 'dazzling_body_classes' );
 
@@ -45,27 +45,27 @@ add_filter( 'body_class', 'dazzling_body_classes' );
  * @return string The filtered title.
  */
 function dazzling_wp_title( $title, $sep ) {
-	global $page, $paged;
+  global $page, $paged;
 
-	if ( is_feed() ) {
-		return $title;
-	}
+  if ( is_feed() ) {
+    return $title;
+  }
 
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
+  // Add the blog name
+  $title .= get_bloginfo( 'name' );
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
+  // Add the blog description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $title .= " $sep $site_description";
+  }
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'dazzling' ), max( $paged, $page ) );
-	}
+  // Add a page number if necessary:
+  if ( $paged >= 2 || $page >= 2 ) {
+    $title .= " $sep " . sprintf( __( 'Page %s', 'dazzling' ), max( $paged, $page ) );
+  }
 
-	return $title;
+  return $title;
 }
 add_filter( 'wp_title', 'dazzling_wp_title', 10, 2 );
 
@@ -103,11 +103,11 @@ add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sideba
  * @return void
  */
 function dazzling_setup_author() {
-	global $wp_query;
+  global $wp_query;
 
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
+  if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
+    $GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
+  }
 }
 add_action( 'wp', 'dazzling_setup_author' );
 
@@ -138,9 +138,9 @@ function dazzling_wpsearch($form) {
 add_filter( 'the_password_form', 'custom_password_form' );
 
 function custom_password_form() {
-	global $post;
-	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-	$o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
+  global $post;
+  $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+  $o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
   <div class="row">
     <div class="col-lg-10">
         ' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'dazzling') . '
@@ -153,7 +153,7 @@ function custom_password_form() {
     </div>
   </div>
 </form>';
-	return $o;
+  return $o;
 }
 
 
@@ -291,12 +291,13 @@ function dazzling_featured_slider() {
             if ( $count && $slidecat ) {
             $query = new WP_Query( array( 'cat' => $slidecat, 'posts_per_page' => $count ) );
             if ($query->have_posts()) :
+              $pics = ['<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/cropped-dscn10501-e1411159678712.jpg" class="attachment-post-thumbnail wp-post-image" alt="The Ocean" />','<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/blue-ray-header-inverted-e1411159576131.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean 2" />'] ;
+              $picnum = 0;
               while ($query->have_posts()) : $query->the_post();
 
               echo '<li>';
-                if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) :
-                  echo get_the_post_thumbnail();
-                endif;
+            
+                  echo $pics[$picnum];
 
                   echo '<div class="flex-caption">';
                     echo '<a href="'. get_permalink() .'">';
@@ -304,7 +305,7 @@ function dazzling_featured_slider() {
                       if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
                     echo '</a>';
                   echo '</div>';
-
+                  $picnum += 1; 
                   endwhile;
                 endif;
 
