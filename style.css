@@ -578,13 +578,41 @@ li.recentcomments {
 
 /* =Navigation
 ----------------------------------------------- */
+@media (max-width: 920px) and (min-width: 768px) {
+  #menu-menu-1 li a{
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  #menu-menu-1{
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1130px) and (min-width: 921px) {
+   #menu-menu-1 li a{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 1130px)  {
+  #logo img {
+    height: 77px;
+    width: 150px;
+    z-index: 0; 
+  }
+}
+
+.navbar-header{
+  min-height: 66px;
+}
 #logo { 
-  background-color: #e0eff1;
+  /*background-color: #e0eff1;*/
   position: absolute;
-  top: 10%;
+  /*top: 10%;*/
   z-index: 3;
-  padding: 10px;
-  border-radius: 10%;
+  /*padding: 10px;*/
+  /*border-radius: 10%;*/
 }
 .site-description{ 
   display: inline-block;
