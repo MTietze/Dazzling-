@@ -291,7 +291,7 @@ function dazzling_featured_slider() {
             if ( $count && $slidecat ) {
             $query = new WP_Query( array( 'cat' => $slidecat, 'posts_per_page' => $count ) );
             if ($query->have_posts()) :
-              $pics = ['<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/cropped-dscn10501-e1411159678712.jpg" class="attachment-post-thumbnail wp-post-image" alt="The Ocean" />','<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/blue-ray-header-inverted-e1411159576131.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean 2" />'] ;
+              $pics = ['<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/blue-ray-header-inverted-e1411159576131.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean 2" />','<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/10/blue-ray-header-inverted-e1413413611870.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean" />'] ;
               $picnum = 0;
               while ($query->have_posts()) : $query->the_post();
 
