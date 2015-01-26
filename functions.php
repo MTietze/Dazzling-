@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */
+  $content_width = 730; /* pixels */
 }
 
 if ( ! function_exists( 'dazzling_setup' ) ) :
@@ -22,41 +22,41 @@ if ( ! function_exists( 'dazzling_setup' ) ) :
  */
 function dazzling_setup() {
 
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change 'dazzling' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'dazzling', get_template_directory() . '/languages' );
+  /*
+   * Make theme available for translation.
+   * Translations can be filed in the /languages/ directory.
+   * If you're building a theme based on _s, use a find and replace
+   * to change 'dazzling' to the name of your theme in all the template files
+   */
+  load_theme_textdomain( 'dazzling', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+  // Add default posts and comments RSS feed links to head.
+  add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
+  /*
+   * Enable support for Post Thumbnails on posts and pages.
+   *
+   * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+   */
+  add_theme_support( 'post-thumbnails' );
 
   add_image_size( 'dazzling-featured', 730, 410, true );
-	add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
+  add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'dazzling' ),
-		'footer-links' => __( 'Footer Links', 'dazzling' ) // secondary nav in footer
-	) );
+  // This theme uses wp_nav_menu() in one location.
+  register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'dazzling' ),
+    'footer-links' => __( 'Footer Links', 'dazzling' ) // secondary nav in footer
+  ) );
 
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+  // Enable support for Post Formats.
+  add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'dazzling_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+  // Setup the WordPress core custom background feature.
+  add_theme_support( 'custom-background', apply_filters( 'dazzling_custom_background_args', array(
+    'default-color' => 'ffffff',
+    'default-image' => '',
+  ) ) );
 }
 endif; // dazzling_setup
 add_action( 'after_setup_theme', 'dazzling_setup' );
@@ -65,22 +65,22 @@ add_action( 'after_setup_theme', 'dazzling_setup' );
  * Register widgetized area and update sidebar with default widgets.
  */
 function dazzling_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'dazzling' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar(array(
-    	'id' => 'home-widget-1',
-    	'name' => __( 'Homepage Widget 1', 'dazzling' ),
-    	'description' => __( 'Displays on the Home Page', 'dazzling' ),
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h3 class="widgettitle">',
-    	'after_title' => '</h3>',
+  register_sidebar( array(
+    'name'          => __( 'Sidebar', 'dazzling' ),
+    'id'            => 'sidebar-1',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+  ) );
+  register_sidebar(array(
+      'id' => 'home-widget-1',
+      'name' => __( 'Homepage Widget 1', 'dazzling' ),
+      'description' => __( 'Displays on the Home Page', 'dazzling' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="widgettitle">',
+      'after_title' => '</h3>',
     ));
 
     register_sidebar(array(
@@ -104,13 +104,13 @@ function dazzling_widgets_init() {
     ));
 
     register_sidebar(array(
-    	'id' => 'footer-widget-1',
-    	'name' =>  __( 'Footer Widget 1', 'dazzling' ),
-    	'description' =>  __( 'Used for footer widget area', 'dazzling' ),
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h3 class="widgettitle">',
-    	'after_title' => '</h3>',
+      'id' => 'footer-widget-1',
+      'name' =>  __( 'Footer Widget 1', 'dazzling' ),
+      'description' =>  __( 'Used for footer widget area', 'dazzling' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="widgettitle">',
+      'after_title' => '</h3>',
     ));
 
     register_sidebar(array(
@@ -156,23 +156,23 @@ function dazzling_scripts() {
 
   wp_enqueue_style( 'dazzling-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
-  if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
-		wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
+  if( of_get_option('dazzling_slider_checkbox') == 1 ) {
+    wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
   }
 
-	wp_enqueue_style( 'dazzling-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'dazzling-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('dazzling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
+  wp_enqueue_script('dazzling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
-	if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
-		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
-	}
+  if( of_get_option('dazzling_slider_checkbox') == 1 ) {
+    wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
+  }
 
-	wp_enqueue_script( 'dazzling-main', get_template_directory_uri() . '/inc/js/main.js', array('jquery') );
+  wp_enqueue_script( 'dazzling-main', get_template_directory_uri() . '/inc/js/main.js', array('jquery') );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script( 'comment-reply' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'dazzling_scripts' );
 

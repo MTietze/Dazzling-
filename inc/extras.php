@@ -281,7 +281,7 @@ if ( ! function_exists( 'dazzling_featured_slider' ) ) :
  * Featured image slider
  */
 function dazzling_featured_slider() {
-    if ( is_front_page() && of_get_option('dazzling_slider_checkbox') == 1 ) {
+    if ( of_get_option('dazzling_slider_checkbox') == 1 ) {
       echo '<div class="flexslider">';
         echo '<ul class="slides">';
 
