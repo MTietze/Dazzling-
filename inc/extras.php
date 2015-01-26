@@ -298,8 +298,8 @@ function dazzling_featured_slider() {
               echo '<li>';
             
                   echo $pics[$picnum];
-
                   echo '<div class="flex-caption">';
+                  echo '<h2 class="entry-title" id="blog_posts">Recent blog posts:</h2>';
                     echo '<a href="'. get_permalink() .'">';
                       if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
                       if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
