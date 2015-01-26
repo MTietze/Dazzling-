@@ -992,9 +992,6 @@ p.logged-in-as {
   .footer-nav.nav, .copyright {
     float: none;
   }
-  .flex-caption {
-    display: none;
-  }
   .navbar > .container .navbar-brand {
     margin: 0;
   }
@@ -1002,6 +999,19 @@ p.logged-in-as {
     line-height: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+}
+
+@media(max-width: 940px){
+  .flex-caption{
+    bottom: 3%;
+  }
+  .flex-caption .excerpt{
+    font-size: 12px;
+  }
+
+  .flex-caption h2, #blog_posts{
+    display: initial;
   }
 }
 

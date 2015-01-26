@@ -299,9 +299,9 @@ function dazzling_featured_slider() {
             
                   echo $pics[$picnum];
                   echo '<div class="flex-caption">';
-                  echo '<h2 class="entry-title" id="blog_posts">Recent blog posts:</h2>';
+                  // echo '<h2 class="entry-title" id="blog_posts">Recent blog posts:</h2>';
                     echo '<a href="'. get_permalink() .'">';
-                      if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
+                      if ( get_the_title() != '' ) echo '<div id="blog-posts"><span >'. get_the_title().'</span></div>';
                       if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
                     echo '</a>';
                   echo '</div>';

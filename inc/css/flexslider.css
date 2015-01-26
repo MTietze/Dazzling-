@@ -122,11 +122,7 @@ html[xmlns] .slides {display: block;}
   height: 60px;
   top: 45%;
 }
-@media (max-width: 768px) {
-  .flex-caption {
-    display: none;
-  }
-}
+
 
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
