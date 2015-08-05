@@ -291,13 +291,15 @@ function dazzling_featured_slider() {
             if ( $count && $slidecat ) {
             $query = new WP_Query( array( 'cat' => $slidecat, 'posts_per_page' => $count ) );
             if ($query->have_posts()) :
-              $pics = ['<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/blue-ray-header-inverted-e1411159576131.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean 2" />','<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/10/blue-ray-header-inverted-e1413413611870.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean" />'] ;
-              $picnum = 0;
+              // $pics = ['<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/09/blue-ray-header-inverted-e1411159576131.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean 2" />','<img width="1900" height="550" src="http://healingblueray.com/wp-content/uploads/2014/10/blue-ray-header-inverted-e1413413611870.png" class="attachment-post-thumbnail wp-post-image" alt="The Ocean" />'] ;
+              // $picnum = 0;
               while ($query->have_posts()) : $query->the_post();
-
-              echo '<li>';
+              echo '<li class="col-md-8 col-sm-12">';
+                   if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) :
+                     echo get_the_post_thumbnail();
+                   endif;
             
-                  echo $pics[$picnum];
+                  // echo $pics[$picnum];
                   echo '<div class="flex-caption">';
                   // echo '<h2 class="entry-title" id="blog_posts">Recent blog posts:</h2>';
                     echo '<a href="'. get_permalink() .'">';

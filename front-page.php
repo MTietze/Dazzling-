@@ -6,10 +6,11 @@
 
 get_header(); ?>
 
-<?php dazzling_featured_slider(); ?>
+
 <?php dazzling_call_for_action(); ?>
 
 <div id="content" class="site-content container">
+  <?php dazzling_featured_slider(); ?>
 	<div id="primary" class="content-area col-sm-12 col-md-8 pull-left">
 		<main id="main" class="site-main" role="main">
 
@@ -27,6 +28,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 					<?php edit_post_link( __( 'Edit', 'dazzling' ), '<footer class="entry-meta"><i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span></footer>' ); ?>
 				</article><!-- #post-## -->
+
 
 			<?php endwhile; // end of the loop. ?>
 

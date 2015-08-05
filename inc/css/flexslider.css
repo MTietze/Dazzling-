@@ -60,7 +60,7 @@ html[xmlns] .slides {display: block;}
 /* Control Nav */
 .flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
 .flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
-.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
+.flex-control-paging li a {width: 11px; height: 11px; display: none; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
 .flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
 .flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
 
@@ -71,10 +71,12 @@ html[xmlns] .slides {display: block;}
   border: none;
 }
 .flexslider .slides img {
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  width: auto;
+    max-height: 300px;
+    min-height: 265px;
+    display: block;
+    margin-top: 50px;
+    border-radius: 18% 0 0 0;
+    box-shadow: 0px -1px 20px -4px black;
 }
 .flex-control-nav {
   bottom: 20px;
@@ -84,24 +86,17 @@ html[xmlns] .slides {display: block;}
   position:relative;
 }
 .flex-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  padding: 0 30px;
-  display: inline-block;
-  max-width: 1170px;
-  margin: auto;
-  bottom: 50px;
 }
 .flex-caption .excerpt {
-  background: rgb(59, 59, 59);
-  background: rgba(59, 59, 59, 0.8);
-  display: block;
-  color: #ddd;
-  max-width: 600px;
-  padding: 12px 20px;
+    font-size: 14px;
+    background: rgba(59,59,59,0.8);
+    border-radius: 0 0 26% 0%;
+    box-shadow: 3px 9px 20px black;
+    background: rgb(59, 59, 59);
+    background: rgba(59, 59, 59, 0.8);
+    display: block;
+    color: #ddd;
+    padding: 12px 20px;
 }
 .flex-caption h2 {
   background: rgb(31, 166, 122);
